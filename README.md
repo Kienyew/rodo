@@ -17,8 +17,8 @@ Also see `rodo --help`, which provides no more information than here.
 
 ## Example
 
+![example](https://user-images.githubusercontent.com/31496021/175764741-831ac947-b2a3-4521-9734-f4bd24bda3b0.gif)
 
-https://user-images.githubusercontent.com/31496021/175759273-59489b56-bcef-4766-8bb7-9c7d1b5c71f9.mp4
 
 
 ## Database structure
