@@ -95,4 +95,4 @@ CREATE TABLE IF NOT EXISTS active (
 
 ## Notes
 
-Statistics and historical informations not available yet.
+Statistics and historical information not available yet.
