@@ -2,7 +2,6 @@
 **Rodo**: A command line todo application written in rust.
 
 
-
 ## Commands
 
 1. `rodo`: without subcommand, simply list all task in current task list.
@@ -16,11 +15,10 @@
 Also see `rodo --help`, which provides no more information than here.
 
 
-
 ## Example
 
 
-
+https://user-images.githubusercontent.com/31496021/175759273-59489b56-bcef-4766-8bb7-9c7d1b5c71f9.mp4
 
 
 ## Database structure
@@ -33,7 +31,7 @@ All individual tasks are stored in this table.
 
 schema:
 
-```sqlite
+```sql
 CREATE TABLE IF NOT EXISTS tasks (
 	id INTEGER PRIMARY KEY,
 	task_list_id INTEGER NOT NULL,
@@ -56,7 +54,7 @@ Each row in this table indicating a task list.
 
 schema:
 
-```sqlite
+```sql
 CREATE TABLE IF NOT EXISTS active (
 	id INTEGER PRIMARY KEY,
 	task_list_id INTEGER,
@@ -78,7 +76,7 @@ Only one or zero task list can be active (when you call `rodo` without arguments
 
 schema:
 
-```sqlite
+```sql
 CREATE TABLE IF NOT EXISTS active (
 	id INTEGER PRIMARY KEY,
 	task_list_id INTEGER,
@@ -87,14 +85,12 @@ CREATE TABLE IF NOT EXISTS active (
 ```
 
 
-
 ## Dependencies
 
 1. [clap](https://github.com/clap-rs/clap): **C**ommand **L**ine **A**rgument **P**arser.
 2. [colored](https://crates.io/crates/colored): Colored output for terminal.
 3. [directories](https://crates.io/crates/directories): Find data directory. (eg. `~/.local/share/`)
 4. [rusqlite](https://github.com/rusqlite/rusqlite): Interface to sqlite.
-
 
 
 ## Notes
