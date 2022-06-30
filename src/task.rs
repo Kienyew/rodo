@@ -79,6 +79,11 @@ impl TaskList {
         let task = self.tasks.remove(index - 1);
         conn.execute("DELETE FROM tasks WHERE id = ?", [task.id.unwrap()])
             .expect("unable to delete task from database");
+
+        // reset index of tasks
+        for (i, task) in self.tasks.iter_mut().skip(index - 1).enumerate() {
+            task.index = (i + 1) as u64;
+        }
     }
 
     /// done a task, this will issued by 'done' command.
