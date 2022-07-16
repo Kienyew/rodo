@@ -31,7 +31,7 @@ pub struct UndoneArguments {
     pub index: usize,
 }
 
-pub struct CreateArguments {
+pub struct NewArguments {
     /// the optional name of the task list
     pub name: Option<String>,
 }
@@ -121,7 +121,7 @@ fn init_database() -> rusqlite::Connection {
 }
 
 impl Application {
-    pub fn new() -> Self {
+    pub fn init() -> Self {
         Application {
             conn: init_database(),
         }
@@ -239,8 +239,8 @@ impl Application {
         task_list.commit(&self.conn);
     }
 
-    /// Process the create command
-    pub fn create(&self, args: CreateArguments) {
+    /// Process the new command
+    pub fn new(&self, args: NewArguments) {
         let mut task_list = TaskList {
             id: None,
             name: args.name,

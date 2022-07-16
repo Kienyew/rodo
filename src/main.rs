@@ -4,7 +4,7 @@ mod task;
 mod utils;
 
 use app::{
-    AddArguments, Application, CommitArguments, CreateArguments, DoneArguments, RemoveArguments,
+    AddArguments, Application, CommitArguments, DoneArguments, NewArguments, RemoveArguments,
     UndoneArguments,
 };
 use clap::{Parser, Subcommand};
@@ -43,7 +43,7 @@ enum Commands {
         index: usize,
     },
     /// Create a new task list and replace it as active task list.
-    Create {
+    New {
         /// Create a new task list with optional name
         name: Option<String>,
     },
@@ -53,7 +53,7 @@ enum Commands {
 
 fn main() {
     let cli = Cli::parse();
-    let app = Application::new();
+    let app = Application::init();
     match cli.command {
         // Insert a new task to current task list
         Some(Commands::Add { title, description }) => {
@@ -72,8 +72,8 @@ fn main() {
             app.undone(UndoneArguments { index });
         }
 
-        Some(Commands::Create { name }) => {
-            app.create(CreateArguments { name });
+        Some(Commands::New { name }) => {
+            app.new(NewArguments { name });
         }
 
         Some(Commands::Commit {}) => {

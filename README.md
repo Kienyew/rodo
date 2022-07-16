@@ -9,7 +9,7 @@
 3. `rodo remove <index>` remove the task with the specified index from active task list.
 4. `rodo done <index>`: mark a task as completed.
 5. `rodo undone <index>`: mark a task as non-complete (*i.e.* undo the 'done' command).
-6. `rodo create [name]`: create a new task list with optional [name] and set the active task list to it.
+6. `rodo new [name]`: create a new task list with optional [name] and set the active task list to it.
 7. `rodo commit`: set the active task list to none, so when next time calling `rodo`, nothing will show up.
 
 Also see `rodo --help`, which provides no more information than here.
