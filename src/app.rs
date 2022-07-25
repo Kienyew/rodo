@@ -127,7 +127,7 @@ impl Application {
         }
     }
 
-    /// Read from json file containing the active task list
+    /// get the active task list from database
     fn get_active_task_list(&self) -> Option<TaskList> {
 
         // select the active task list
